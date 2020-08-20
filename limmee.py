@@ -163,7 +163,7 @@ for idx, (image, label) in enumerate(zip(images.permute(0, 2, 3, 1).numpy(), lab
     # segmentation_fn 定義如何把圖片做 segmentation
 
     lime_img, mask = explaination.get_image_and_mask(
-        label=label.item(),
+        label=explaination.top_labels[0],
         positive_only=False,
         hide_rest=False,
         num_features=11,
